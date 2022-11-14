@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(188, 187, 187);
+}
+.container16 {
+  display: inline-grid;
+  grid-template-columns: repeat(16, 1fr);
+  max-width: 1000px;
+  background-color: white;
+  margin-left: 10rem;
+  margin-top: 5rem;
+}
+.square {
+  border: 1px solid;
+  width: 20px;
+  height: 20px;
+}
+
+.container32 {
+  display: inline-grid;
+  grid-template-columns: repeat(32, 1fr);
+  max-width: 1000px;
+  background-color: white;
+  margin-left: 10rem;
+  margin-top: 5rem;
+}
+
+.square32 {
+  border: 1px solid;
+  width: 20px;
+  height: 20px;
+}
