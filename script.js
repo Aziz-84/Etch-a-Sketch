@@ -1,9 +1,26 @@
-function grid16() {
-  for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
-      const container = document.querySelector(".container16");
+const sixteenBysixteen = document.querySelector(".sixteenBysixteen");
+const sixyfourBysixtyfour = document.querySelector(".sixyfourBysixtyfour");
+const thirtyTwoBythirtyTwo = document.querySelector(".thirtyTwoBythirtyTwo");
+
+sixteenBysixteen.addEventListener("click", () => {
+  grid(16);
+});
+
+thirtyTwoBythirtyTwo.addEventListener("click", () => {
+  grid(32);
+});
+
+sixyfourBysixtyfour.addEventListener("click", () => {
+  grid(64);
+});
+
+function grid(num) {
+  for (let i = 0; i < num; i++) {
+    for (let j = 0; j < num; j++) {
+      const container = document.querySelector(`.container${num}`);
+      console.log(container);
       const cell = document.createElement("div");
-      cell.className = "square";
+      cell.className = `square${num}`;
       container.appendChild(cell);
       cell.addEventListener("mouseover", () => {
         cell.setAttribute("style", "background-color:black");
@@ -11,19 +28,3 @@ function grid16() {
     }
   }
 }
-
-function grid32() {
-  for (let i = 0; i < 32; i++) {
-    for (let j = 0; j < 32; j++) {
-      const container32 = document.querySelector(".container32");
-      const cell = document.createElement("div");
-      cell.className = "square32";
-      container32.appendChild(cell);
-      cell.addEventListener("mouseover", () => {
-        cell.setAttribute("style", "background-color:black");
-      });
-    }
-  }
-}
-
-grid32();
