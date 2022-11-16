@@ -1,17 +1,37 @@
 const sixteenBysixteen = document.querySelector(".sixteenBysixteen");
 const sixyfourBysixtyfour = document.querySelector(".sixyfourBysixtyfour");
 const thirtyTwoBythirtyTwo = document.querySelector(".thirtyTwoBythirtyTwo");
+const erase = document.querySelector(".erase");
+const paint = document.querySelector(".paint");
 
+let eraser = false;
+let clicked = true;
+
+paint.addEventListener("click", () => {
+  eraser = false;
+});
+
+erase.addEventListener("click", (e) => {
+  eraser = true;
+  console.log(e.target);
+  console.log(eraser);
+});
 sixteenBysixteen.addEventListener("click", () => {
-  grid(16);
+  if (clicked) {
+    grid(16);
+  }
 });
 
 thirtyTwoBythirtyTwo.addEventListener("click", () => {
-  grid(32);
+  if (clicked) {
+    grid(32);
+  }
 });
 
 sixyfourBysixtyfour.addEventListener("click", () => {
-  grid(64);
+  if (clicked) {
+    grid(64);
+  }
 });
 
 function grid(num) {
@@ -22,8 +42,23 @@ function grid(num) {
       const cell = document.createElement("div");
       cell.className = `square${num}`;
       container.appendChild(cell);
+
       cell.addEventListener("mouseover", () => {
-        cell.setAttribute("style", "background-color:black");
+        // cell.setAttribute("style", "background-color:black"   `${num}`);
+        /*
+        cell.setAttribute(
+          `style`,
+          `background-color:${(eraser = true)}?black:white`
+        );
+        */
+        if (eraser) {
+          cell.style.backgroundColor = "white";
+          //cell.setAttribute("style", "background-color:white");
+        } else if (!eraser) {
+          //cell.setAttribute("style", "background-color:black");
+          cell.style.backgroundColor = "black";
+        }
+        clicked = false;
       });
     }
   }
