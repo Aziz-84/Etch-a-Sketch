@@ -44,18 +44,9 @@ function grid(num) {
       container.appendChild(cell);
 
       cell.addEventListener("mouseover", () => {
-        // cell.setAttribute("style", "background-color:black"   `${num}`);
-        /*
-        cell.setAttribute(
-          `style`,
-          `background-color:${(eraser = true)}?black:white`
-        );
-        */
         if (eraser) {
           cell.style.backgroundColor = "white";
-          //cell.setAttribute("style", "background-color:white");
         } else if (!eraser) {
-          //cell.setAttribute("style", "background-color:black");
           cell.style.backgroundColor = "black";
         }
         clicked = false;
