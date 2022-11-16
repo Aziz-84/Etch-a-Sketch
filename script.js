@@ -3,21 +3,20 @@ const sixyfourBysixtyfour = document.querySelector(".sixyfourBysixtyfour");
 const thirtyTwoBythirtyTwo = document.querySelector(".thirtyTwoBythirtyTwo");
 const erase = document.querySelector(".erase");
 const paint = document.querySelector(".paint");
-
+const clear = document.querySelector(".clear");
 let eraser = false;
 let clicked = true;
+let cleared = false;
 
 paint.addEventListener("click", () => {
   eraser = false;
 });
 
-erase.addEventListener("click", (e) => {
+erase.addEventListener("click", () => {
   eraser = true;
-  console.log(e.target);
-  console.log(eraser);
 });
 sixteenBysixteen.addEventListener("click", () => {
-  if (clicked) {
+  if (clicked || cleared) {
     grid(16);
   }
 });
@@ -38,10 +37,14 @@ function grid(num) {
   for (let i = 0; i < num; i++) {
     for (let j = 0; j < num; j++) {
       const container = document.querySelector(`.container${num}`);
-      console.log(container);
       const cell = document.createElement("div");
       cell.className = `square${num}`;
       container.appendChild(cell);
+
+      clear.addEventListener("click", () => {
+        cell.classList.remove(`square${num}`);
+        cleared = true;
+      });
 
       cell.addEventListener("mouseover", () => {
         if (eraser) {
