@@ -12,7 +12,9 @@ let randomBtn = false;
 
 rainbow.addEventListener("click", () => {
   randomBtn = true;
+  grid(32);
 });
+
 paint.addEventListener("click", () => {
   randomBtn = false;
   eraser = false;
@@ -24,6 +26,7 @@ erase.addEventListener("click", () => {
 });
 sixteenBysixteen.addEventListener("click", () => {
   randomBtn = false;
+
   if (clicked || cleared) {
     grid(16);
   }
@@ -54,10 +57,23 @@ function grid(num) {
         cell.classList.remove(`square${num}`);
         cleared = true;
       });
+      sixteenBysixteen.addEventListener("click", () => {
+        cell.classList.remove(`square${num}`);
+        cleared = true;
+      });
+      thirtyTwoBythirtyTwo.addEventListener("click", () => {
+        cell.classList.remove(`square${num}`);
+        cleared = true;
+      });
+
+      sixyfourBysixtyfour.addEventListener("click", () => {
+        cell.classList.remove(`square${num}`);
+        cleared = true;
+      });
 
       cell.addEventListener("mouseover", () => {
         if (eraser) {
-          cell.style.backgroundColor = "white";
+          cell.style.backgroundColor = "#B3AEAB";
         } else if (!eraser) {
           cell.style.backgroundColor = "black";
         } else if (randomBtn) {

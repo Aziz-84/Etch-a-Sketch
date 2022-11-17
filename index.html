@@ -8,18 +8,31 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <button class="sixteenBysixteen">16x16</button>
-    <button class="thirtyTwoBythirtyTwo">32x32</button>
-    <button class="sixyfourBysixtyfour">64x64</button>
-    <div class="mainContainer">
-      <div class="container16"></div>
-      <div class="container32"></div>
-      <div class="container64"></div>
+    <img class="image" src="../image/pic.jpg" />
+
+    <h2 class="title">Etch-a-sketch 🖌️</h2>
+    <h3 class="copyRight">Copyright © 2022 Aziz Abdulrahman</h3>
+
+    <div class="buttons">
+      <div class="cellSize">
+        <button class="sixteenBysixteen">16x16</button>
+        <button class="thirtyTwoBythirtyTwo">32x32</button>
+        <button class="sixyfourBysixtyfour">64x64</button>
+      </div>
+      <div class="tools">
+        <button class="paint">pencil mode🖌️</button>
+        <button class="erase">Eraser mode</button>
+        <button class="clear">Clear</button>
+        <button class="rainbow">🌈Rainbow mode</button>
+      </div>
     </div>
-    <button class="paint">Paint</button>
-    <button class="erase">Erase</button>
-    <button class="clear">Clear</button>
-    <button class="rainbow">Rainbow</button>
+    <div class="sketch">
+      <div class="mainContainer">
+        <div class="container16"></div>
+        <div class="container32"></div>
+        <div class="container64"></div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
