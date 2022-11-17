@@ -33,7 +33,7 @@
 button {
   font-size: 24px;
   padding: 6px;
-  border: 2px solid black;
+  border: 2px solid rgb(2, 2, 2);
   border-radius: 2rem;
 }
 .buttons {
