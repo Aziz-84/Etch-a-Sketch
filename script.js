@@ -75,7 +75,7 @@ function grid(num) {
         if (eraser) {
           cell.style.backgroundColor = "#B3AEAB";
         } else if (!eraser) {
-          cell.style.backgroundColor = "black";
+          cell.style.backgroundColor = "#020202";
         } else if (randomBtn) {
         }
         clicked = false;
